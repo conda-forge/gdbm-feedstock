@@ -10,15 +10,13 @@ source:
   sha1: 0f1056ab3beb1bf09dad06f8083f2c79716a5b1b
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - readline
-  run:
     - readline
 
 test:

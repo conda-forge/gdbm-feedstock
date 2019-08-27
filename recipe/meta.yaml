@@ -11,6 +11,10 @@ source:
 
 build:
   number: 1
+  run_exports:
+    # Please see ABI report
+    # https://abi-laboratory.pro/index.php?view=timeline&l=gdbm
+    - {{ pin_subpackage(name, max_pin='x.x') }}
   skip: True  # [win]
 
 requirements:

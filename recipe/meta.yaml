@@ -10,15 +10,17 @@ source:
   sha1: 0f1056ab3beb1bf09dad06f8083f2c79716a5b1b
 
 build:
-  number: 0
+  number: 1
+  run_exports:
+    # Please see ABI report
+    # https://abi-laboratory.pro/index.php?view=timeline&l=gdbm
+    - {{ pin_subpackage(name, max_pin='x.x') }}
   skip: True  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - readline
-  run:
     - readline
 
 test:

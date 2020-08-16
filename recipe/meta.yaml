@@ -13,7 +13,7 @@ source:
     - gdbm_gcc_10.patch
 
 build:
-  number: 1
+  number: 2
   run_exports:
     # Please see ABI report
     # https://abi-laboratory.pro/index.php?view=timeline&l=gdbm

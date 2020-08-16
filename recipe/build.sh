@@ -2,10 +2,13 @@
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./build-aux
 
+# Need fcommon to avoid a multiple symbol definition error
+export CFLAGS="$CFLAGS -fcommon"
+
 ./configure --prefix="${PREFIX}" \
             --enable-static=no
-make
+make -j${CPU_COUNT}
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-make check
+  make check
 fi
 make install
